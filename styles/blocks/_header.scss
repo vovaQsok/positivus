@@ -11,7 +11,7 @@
 
   &__inner {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     column-gap: 40px;
 
@@ -42,7 +42,7 @@
       font-size: 16px;
     }
 
-    &-list{
+    &-list {
       display: flex;
       justify-content: center;
       column-gap: 40px;
@@ -79,12 +79,10 @@
   }
 
   &__button {
-    @include tablet{
+    @include tablet {
       height: 48px;
       padding-left: 18px;
       font-size: 16px;
     }
   }
-
-
 }

@@ -1,9 +1,9 @@
-@mixin fluid-text($max:48, $min:16) {
+@mixin fluid-text($max: 48, $min: 16) {
   font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
 }
 
 @mixin reset-link {
-  color:inherit;
+  color: inherit;
 
   &,
   &:hover {
@@ -17,7 +17,7 @@
   border: none;
 }
 
-@mixin flex-center ($isInline: false) {
+@mixin flex-center($isInline: false) {
   @if $isInline {
     display: inline-flex;
   } @else {
@@ -30,7 +30,7 @@
 
 @mixin abs-center {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   translate: -50% -50%;
 }

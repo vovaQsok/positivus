@@ -9,7 +9,7 @@
   }
 
   &__input {
-    &:not(:checked) + .radio__emulator::after  {
+    &:not(:checked) + .radio__emulator::after {
       opacity: 0;
     }
   }

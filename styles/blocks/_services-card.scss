@@ -52,7 +52,7 @@
     flex-direction: column;
     align-items: start;
 
-    @include mobile{
+    @include mobile {
       grid-column: -1/1;
     }
   }

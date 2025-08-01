@@ -1,19 +1,44 @@
 .footer {
+  @include mobile {
+    padding-inline: 0;
+  }
+
   &__inner {
     padding: 55px 60px 50px;
     color: var(--color-light);
     background-color: var(--color-dark);
-    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+
+    @include mobile-above {
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 37px;
+      padding: 50px var(--container-padding-x) 30px;
+    }
   }
 
   &__navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap:30px ;
+    column-gap: 30px;
 
     &:not(:last-child) {
       margin-bottom: 66px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 37px;
+    }
+
+    @include mobile {
+      display: contents;
     }
   }
 
@@ -22,6 +47,11 @@
       display: flex;
       align-items: center;
       column-gap: 40px;
+
+      @include mobile {
+        flex-direction: column;
+        row-gap: 15px;
+      }
     }
 
     &-link {
@@ -36,15 +66,33 @@
     }
   }
 
+  &__soc1als {
+    @include mobile {
+      order: 1;
+    }
+  }
+
   &__body {
     display: flex;
     justify-content: space-between;
     column-gap: 50px;
 
-    &:not(:last-child) {
-      margin-bottom: 50px;
-      padding-bottom: 50px;
-      border-bottom: 1px solid currentColor;
+    @include mobile-above {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid currentColor;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      row-gap: inherit;
+    }
+
+    @include mobile-s {
+      width: 100%;
     }
   }
 
@@ -53,6 +101,11 @@
     flex-direction: column;
     align-items: start;
     row-gap: 27px;
+
+    @include mobile {
+      align-items: center;
+      text-align: center;
+    }
 
     &-title {
       color: var(--color-dark);
@@ -76,6 +129,16 @@
   &__extra {
     display: flex;
     column-gap: 40px;
+
+    @include mobile {
+      order: 2;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 15px;
+      width: 100%;
+      padding-top: 37px;
+      border-top: 1px solid currentColor;
+    }
   }
 
   &__privacy-policy-link {

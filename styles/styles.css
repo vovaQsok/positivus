@@ -29,16 +29,7 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
 
@@ -153,8 +144,7 @@ label {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not([fill=none],
-[fill^=url])) {
+:where([fill]:not([fill=none], [fill^=url])) {
   fill: currentColor;
 }
 
@@ -163,8 +153,7 @@ label {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not([stroke=none],
-[stroke^=url])) {
+:where([stroke]:not([stroke=none], [stroke^=url])) {
   stroke: currentColor;
 }
 
@@ -212,11 +201,11 @@ svg * {
   font-display: swap;
 }
 :root {
-  --color-dark: #191A23;
-  --color-dark-alt: #292A32;
-  --color-light: #FFFFFF;
-  --color-accent: #B9FF66;
-  --color-gray: #F3F3F3;
+  --color-dark: #191a23;
+  --color-dark-alt: #292a32;
+  --color-light: #ffffff;
+  --color-accent: #b9ff66;
+  --color-gray: #f3f3f3;
   --color-gray-alt: #898989;
   --border: 1px solid var(--color-dark);
   --border-radius: 14px;
@@ -295,23 +284,30 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 500;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: clamp(43px, 4.1666666667vw, 60px);
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: clamp(36px, 2.7777777778vw, 40px);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: clamp(26px, 2.0833333333vw, 30px);
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: clamp(18px, 1.3888888889vw, 20px);
 }
 
@@ -588,7 +584,7 @@ h4, .h4 {
 }
 .header__inner {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   column-gap: 40px;
 }
@@ -1557,12 +1553,39 @@ h4, .h4 {
   background-color: var(--color-dark-alt);
   border-radius: var(--border-radius);
 }
+@media (max-width: 1280px) {
+  .subscribe-form {
+    flex-direction: column;
+    row-gap: 22px;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+  }
+}
 
+@media (max-width: 767px) {
+  .footer {
+    padding-inline: 0;
+  }
+}
 .footer__inner {
   padding: 55px 60px 50px;
   color: var(--color-light);
   background-color: var(--color-dark);
-  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+@media (min-width: 768px) {
+  .footer__inner {
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 37px;
+    padding: 50px var(--container-padding-x) 30px;
+  }
 }
 .footer__navigation {
   display: flex;
@@ -1573,10 +1596,28 @@ h4, .h4 {
 .footer__navigation:not(:last-child) {
   margin-bottom: 66px;
 }
+@media (max-width: 1023px) {
+  .footer__navigation {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 37px;
+  }
+}
+@media (max-width: 767px) {
+  .footer__navigation {
+    display: contents;
+  }
+}
 .footer__menu-list {
   display: flex;
   align-items: center;
   column-gap: 40px;
+}
+@media (max-width: 767px) {
+  .footer__menu-list {
+    flex-direction: column;
+    row-gap: 15px;
+  }
 }
 .footer__menu-link {
   display: inline-flex;
@@ -1594,21 +1635,46 @@ h4, .h4 {
     color: var(--color-accent);
   }
 }
+@media (max-width: 767px) {
+  .footer__soc1als {
+    order: 1;
+  }
+}
 .footer__body {
   display: flex;
   justify-content: space-between;
   column-gap: 50px;
 }
-.footer__body:not(:last-child) {
-  margin-bottom: 50px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid currentColor;
+@media (min-width: 768px) {
+  .footer__body:not(:last-child) {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid currentColor;
+  }
+}
+@media (max-width: 767px) {
+  .footer__body {
+    flex-direction: column;
+    align-items: center;
+    row-gap: inherit;
+  }
+}
+@media (max-width: 480px) {
+  .footer__body {
+    width: 100%;
+  }
 }
 .footer__contacts {
   display: flex;
   flex-direction: column;
   align-items: start;
   row-gap: 27px;
+}
+@media (max-width: 767px) {
+  .footer__contacts {
+    align-items: center;
+    text-align: center;
+  }
 }
 .footer__contacts-title {
   color: var(--color-dark);
@@ -1632,6 +1698,17 @@ h4, .h4 {
 .footer__extra {
   display: flex;
   column-gap: 40px;
+}
+@media (max-width: 767px) {
+  .footer__extra {
+    order: 2;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    width: 100%;
+    padding-top: 37px;
+    border-top: 1px solid currentColor;
+  }
 }
 .footer__privacy-policy-link {
   text-decoration: underline;

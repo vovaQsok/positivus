@@ -37,7 +37,7 @@
   }
 
   &__image {
-    margin-block: calc(var(--bannerImageOffsetY)* -1);
+    margin-block: calc(var(--bannerImageOffsetY) * -1);
 
     @include tablet {
       max-width: 40%;

@@ -6,7 +6,6 @@
   --fieldInputPlaceholderColor: var(--color-gray-alt);
   --fieldInputHoverBgColor: var(--color-accent);
 
-
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -29,7 +28,7 @@
   }
 
   &__label {
-    @include fluid-text (16, 14);
+    @include fluid-text(16, 14);
   }
 
   &__input {

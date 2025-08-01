@@ -1,4 +1,13 @@
 {
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "format": "prettier . --write",
+    +"lint": "npm run lint:js ; npm run lint:css",
+    lint:fix": "npm run lint:js:fix ; npm run lint:css:fix ; npm run format"
+  },
   "name": "positivus",
   "version": "1.0.0",
   "main": "index.js",
@@ -16,5 +25,15 @@
     "url": "https://github.com/vovaQsok/positivus/issues"
   },
   "homepage": "https://github.com/vovaQsok/positivus#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.23.0",
+    "stylelint-config-standard": "^39.0.0"
+  }
 }

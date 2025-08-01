@@ -46,13 +46,13 @@ $mobile-s: 480px;
   }
 }
 
-@mixin mobile-s-above{
+@mixin mobile-s-above {
   @media (min-width: $mobile-s-above) {
     @content;
   }
 }
 
-@mixin mobile-s{
+@mixin mobile-s {
   @media (max-width: $mobile-s) {
     @content;
   }
@@ -60,12 +60,12 @@ $mobile-s: 480px;
 
 @mixin hover {
   @media (hover: hover) {
-  &:hover {
-    @content;
-  }
+    &:hover {
+      @content;
+    }
   }
 
-  @media (hover:none) {
+  @media (hover: none) {
     &:active {
       @content;
     }

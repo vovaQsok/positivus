@@ -18,7 +18,7 @@
 
     &:nth-child(-n + 9) {
       --counterContent: '0' counter(custom-counter);
-    };
+    }
   }
 
   &__accordion {
@@ -58,7 +58,7 @@
     }
 
     &-title {
-      @include  fluid-text(30,18);
+      @include fluid-text(30, 18);
 
       display: flex;
       align-items: center;

@@ -13,7 +13,7 @@
     display: flex;
   }
 
-  &__image  {
+  &__image {
     &:not(:last-child) {
       margin-right: 20px;
     }
@@ -21,7 +21,6 @@
 
   &__info {
     align-self: end;
-
 
     &:not(:last-child) {
       margin-right: 10px;
@@ -54,7 +53,7 @@
     border-top: var(--border);
 
     @include mobile {
-    --teamCardBodyMarginTop: 20px;
+      --teamCardBodyMarginTop: 20px;
     }
   }
 }
